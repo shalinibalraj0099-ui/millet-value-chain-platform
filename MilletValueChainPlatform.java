@@ -94,7 +94,8 @@ public class MilletValueChainPlatform {
             System.out.println("3. View Marketplace");
             System.out.println("4. Buy Product");
             System.out.println("5. Product Traceability");
-            System.out.println("6. Exit");
+            System.out.println("6. View Registered Farmers");
+            System.out.println("7. Exit");
 
             System.out.print("Enter Choice : ");
             int choice = sc.nextInt();
@@ -179,6 +180,18 @@ public class MilletValueChainPlatform {
                     break;
 
                 case 6:
+                    System.out.println("\nREGISTERED FARMERS");
+                    if (farmers.isEmpty()) {
+                        System.out.println("No farmers registered.");
+                    } else {
+                        for (Farmer registeredFarmer : farmers) {
+                            registeredFarmer.display();
+                            System.out.println("--------------------------------");
+                        }
+                    }
+                    break;
+
+                case 7:
                     System.out.println("Thank You");
                     System.exit(0);
 
